@@ -1,5 +1,7 @@
 # Sistema de Chamados (Help Desk)
 
+Projeto consiste em um Sistema de Help Desk, intuitivo, eficiente e acessível tanto para usuários quanto para administradores. Os requisitos incluíam um serviço de login, gerenciamento de usuários (cliente e administrador), um serviço para gerenciar tickets e trâmites, e um serviço de e-mails para notificar o cliente sobre cada trâmite. Escolhi utilizar uma arquitetura de microsserviços e mais de um banco de dados, tornando este projeto um desafio ideal para aplicar meus estudos pessoais.
+
 ### Objetivo
 
 Desenvolver um sistema de chamados simples com login, cliente, administrador,  chamados, historico de chamados e envios de e-mails.
