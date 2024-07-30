@@ -1,0 +1,132 @@
+version: '3.8'
+
+services:
+  front:
+      build:
+        context: ./front
+        dockerfile: ./Dockerfile.dev
+      container_name: front_server
+      restart: always
+      ports:
+        - 3000:3000
+      depends_on:
+        - api-gateway
+      volumes:
+        # - ../config:/app/config
+        - ./front:/app
+      networks:
+        - mynetwork
+
+  eureka-server:
+    build: ./eureka-server
+    container_name: eureka-server
+    restart: always
+    # env_file:
+    #   - ./config/.env 
+    ports:
+      - 8761:8761
+    networks:
+      - mynetwork
+      
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    restart: always
+    # env_file:
+    #   - ./config/.env 
+    ports:
+      - 8765:8765
+    depends_on:
+      - eureka-server
+    networks:
+      - mynetwork
+
+  ms-oauth:
+    build: ./ms-oauth
+    container_name: ms-oauth
+    restart: always
+    # env_file:
+    #   - ./config/.env 
+    # ports:
+    #   - 8765:8765
+    depends_on:
+      - eureka-server
+    networks:
+      - mynetwork
+    
+  ms-user:
+    build: ./ms-user
+    container_name: ms-user
+    restart: always
+    # env_file:
+    #   - ./config/.env 
+    # ports:
+    #   - 8080:8080
+    depends_on:
+      - mysql
+      - eureka-server
+    networks:
+      - mynetwork
+  
+  ms-ticket:
+    build: ./ms-ticket
+    container_name: ms-ticket
+    restart: always
+    # env_file:
+    #   - ./config/.env 
+    # ports:
+    #   - 8080:8080
+    depends_on:
+      - mongodb
+      - eureka-server
+    networks:
+      - mynetwork
+
+  ms-email:
+      build: ./ms-email
+      container_name: ms-email
+      restart: always
+      # env_file:
+      #   - ./config/.env 
+      # ports:
+      #   - 8080:8080
+      depends_on:
+        - eureka-server
+      networks:
+        - mynetwork
+
+  mysql:
+    image: mysql:latest
+    container_name: db_user
+    restart: always
+    ports:
+      - 3306:3306
+    env_file:
+      - ./config/.env
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mynetwork
+  
+  mongodb:
+    image: mongo:5.0-focal
+    container_name: db_ticket
+    restart: always
+    ports:
+      - 27017:27017
+    env_file:
+      - ./config/.env
+    volumes:
+      - mongo_data:/data/db
+      - ./data/init.js:/docker-entrypoint-initdb.d/init.js:ro
+    networks:
+      - mynetwork
+
+volumes:
+  mysql_data:
+  mongo_data:
+
+networks:
+  mynetwork:
+    driver: bridge

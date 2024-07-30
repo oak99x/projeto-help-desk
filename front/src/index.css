@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+[data-theme="mytheme"] .btn {
+  background-color: #1B3366;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #ececec;
+}
+
+
+.input:focus,
+.input:focus-within {
+  outline-style: none;
+}
+
+.textarea:focus {
+  outline-style: none;
+}
+
+/* .select {
+  height: 2.5rem;
+  min-height: 2.5rem;
+} */
+
+.select:focus {
+  outline-style: none;
+}
+
+[data-theme="mytheme"] .btn-pagination{
+  background-color: #d9d9d9;
+}
+
+[data-theme="mytheme"] .btn-default{
+  background-color: #b4b4b4;
+}
+
+[data-theme="mytheme"] .btn-700 {
+  background-color: #1B3366;
+}
+
+[data-theme="mytheme"] .btn-500 {
+  background-color: #1967D2;
+}
+
+[data-theme="mytheme"] .card-body {
+  display: flex;
+ 
+}
+
+.ql-editor {
+  font-size: 1rem;
+}
+
+/* Ajusta as bordas do container do editor */
+.ql-container {
+  border: 1px solid #ccc; /* Define uma borda sólida com cor cinza */
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #F2F2F2;
+} */
+
+

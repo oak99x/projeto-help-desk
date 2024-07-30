@@ -1,0 +1,79 @@
+server:
+  port: ${PORT:8765}
+  servlet:
+    context-path: /
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+
+spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: default
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: ms-user
+          uri: lb://ms-user
+          predicates:
+            - Path=/api/admin/**, /api/user/**
+
+
+        - id: ms-email
+          uri: lb://ms-email
+          predicates:
+            - Path=/api/email/**
+
+        - id: ms-ticket
+          uri: lb://ms-ticket
+          predicates:
+            - Path=/api/ticket/**
+
+        - id: ms-oauth
+          uri: lb://ms-oauth
+          predicates:
+            - Path=/oauth2/**
+
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+
+jwt:
+  publicKeyUri: http://localhost:${server.port}/oauth2/keys
+  client-id: myclientid
+
+# cors:
+#   allowed-origins: "http://localhost:5173"
+#   allowed-methods: GET, POST, PUT, DELETE, OPTIONS
+#   allowed-headers: Authorization, Content-Type
+#   allow-credentials: true
+#   max-age: 3600
+
+cors:
+  origins: ${CORS_ORIGINS:http://35.247.244.176:8765,http://35.247.244.176:3000,http://35.247.244.176,http://35.247.244.176:80,http://localhost:3000,http://localhost:5173}
+# springdoc:
+  
+#   api-docs:
+#     version: OPENAPI_3_1
+#   swagger-ui:
+#     use-root-path: true
+springdoc:
+  version: '@springdoc.version@'
+  enable-native-support: true
+  api-docs:
+    enabled: true
+    version: OPENAPI_3_1
+  swagger-ui:
+    enabled: true
+    # use-root-path: true
+    path: /swagger-ui.html
+    config-url: /v3/api-docs/swagger-config
