@@ -39,16 +39,19 @@ Desenvolver um sistema de chamados simples com login, cliente, administrador,  c
       
 ### Arquitetura e Tecnologias
 <p align="center">
-  <img src="./imgs/Captura1.png" width="500px" alt="Tela de Start">
-  <p align="center">Figura 1: Captura de tela - Start</p>
+  <img src="./img/1.png" width="500px"">
 </p>
 
 ### Telas
 <p align="center">
-  <img src="./imgs/Captura2.png" width="500px" alt="Tela Play Game">
-  <p align="center">Figura 2: Captura de tela - Play Game</p>
+  <img src="./img/2.png" width="500px">
 </p>
 <p align="center">
-  <img src="./imgs/Captura3.png" width="500px" alt="Tela de Restart">
-  <p align="center">Figura 3: Captura de tela - Restart (Game Over)</p>
+  <img src="./img/3.png" width="500px">
+</p>
+<p align="center">
+  <img src="./img/4.png" width="500px">
+</p>
+<p align="center">
+  <img src="./img/5.png" width="500px">
 </p>
