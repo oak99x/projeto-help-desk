@@ -36,3 +36,19 @@ Desenvolver um sistema de chamados simples com login, cliente, administrador,  c
 6. **Administração:**
     - Interface administrativa para visualizar e gerenciar todos os chamados.
     - Ferramenta para atribuir chamados a administradores.
+      
+### Arquitetura e Tecnologias
+<p align="center">
+  <img src="./imgs/Captura1.png" width="500px" alt="Tela de Start">
+  <p align="center">Figura 1: Captura de tela - Start</p>
+</p>
+
+### Telas
+<p align="center">
+  <img src="./imgs/Captura2.png" width="500px" alt="Tela Play Game">
+  <p align="center">Figura 2: Captura de tela - Play Game</p>
+</p>
+<p align="center">
+  <img src="./imgs/Captura3.png" width="500px" alt="Tela de Restart">
+  <p align="center">Figura 3: Captura de tela - Restart (Game Over)</p>
+</p>
