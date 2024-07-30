@@ -1,5 +1,3 @@
-# Projeto Final
-
 # Sistema de Chamados (Help Desk)
 
 ### Objetivo
