@@ -48,7 +48,7 @@ Develop a simple ticketing system with login functionality, client and administr
   <img src="./img/1.png" width="500px"">
 </p>
 
-### Telas
+### Screens
 <p align="center">
   <img src="./img/2.png" width="500px">
 </p>
