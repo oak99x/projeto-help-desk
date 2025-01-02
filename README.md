@@ -1,43 +1,49 @@
-# Sistema de Chamados (Help Desk)
+# Ticketing System (Help Desk)  
 
-Projeto consiste em um Sistema de Help Desk, intuitivo, eficiente e acessível tanto para usuários quanto para administradores. Os requisitos incluíam um serviço de login, gerenciamento de usuários (cliente e administrador), um serviço para gerenciar tickets e trâmites, e um serviço de e-mails para notificar o cliente sobre cada trâmite. Escolhi utilizar uma arquitetura de microsserviços e mais de um banco de dados, tornando este projeto um desafio ideal para aplicar meus estudos pessoais.
+This project involves a Help Desk System that is intuitive, efficient, and accessible to both users and administrators. The requirements include a login service, user management (client and administrator), a service to handle tickets and workflows, and an email service to notify clients about each update. I chose to use a microservices architecture and multiple databases, making this project an ideal challenge to apply my personal studies.  
 
-### Objetivo
+### Objective  
 
-Desenvolver um sistema de chamados simples com login, cliente, administrador,  chamados, historico de chamados e envios de e-mails.
+Develop a simple ticketing system with login functionality, client and administrator roles, ticket creation, ticket history, and email notifications.  
 
-### **Requisitos**
+### **Basic requirements**  
 
-- Serviço de Login
-- Serviço de User
-- Serviço de Adm
-- Serviço de Chamados
-- Serviço de Email
+- Login Service  
+- User Service  
+- Admin Service  
+- Ticket Service  
+- Email Service  
 
-### **Requisitos Funcionais**
+### **Functional Requirements**  
 
-1. **Autenticação:**
-    - Serviço de cadastro de usuários (cliente e administrador).
-    - Serviço de login.
-2. **Gerenciamento de Usuários:**
-    - Serviço para cliente.
-    - Serviço para administrador.
-3. **Chamados:**
-    - Serviço para criar um novo chamado.
-    - Serviço para listar todos os chamados.
-    - Serviço para listar chamados específicos de um cliente.
-    - Serviço para atribuir um chamado a um administrador.
-    - Serviço para responder a um chamado (mensagem).
-4. **Histórico de Mensagens:**
-    - Serviço para adicionar mensagem ao histórico de um chamado.
-    - Serviço para recuperar o histórico de mensagens de um chamado.
-5. **Envio de E-mails:**
-    - Serviço para enviar e-mails de notificação para o cliente em cada atualização do chamado.
-6. **Administração:**
-    - Interface administrativa para visualizar e gerenciar todos os chamados.
-    - Ferramenta para atribuir chamados a administradores.
-      
-### Arquitetura e Tecnologias
+1. **Authentication:**  
+    - User registration service (client and administrator).  
+    - Login service.  
+
+2. **User Management:**  
+    - Service for client functionalities.  
+    - Service for administrator functionalities.  
+
+3. **Tickets:**  
+    - Service to create a new ticket.  
+    - Service to list all tickets.  
+    - Service to list specific tickets for a client.  
+    - Service to assign a ticket to an administrator.  
+    - Service to respond to a ticket (message).  
+
+4. **Message History:**  
+    - Service to add messages to a ticket’s history.  
+    - Service to retrieve the message history of a ticket.  
+
+5. **Email Notifications:**  
+    - Service to send email notifications to clients for each ticket update.  
+
+6. **Administration:**  
+    - Administrative interface to view and manage all tickets.  
+    - Tool to assign tickets to administrators.  
+
+### Architecture and Technologies  
+
 <p align="center">
   <img src="./img/1.png" width="500px"">
 </p>
